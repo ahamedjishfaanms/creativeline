@@ -158,3 +158,59 @@ const observer = new IntersectionObserver((entries) => {
 if (aboutSection) {
     observer.observe(aboutSection);
 }
+
+// Improved Destination Cards Animation with Intersection Observer
+function initDestinationCards() {
+    const destinationCards = document.querySelectorAll('.destination-card');
+    
+    if (!destinationCards.length) return;
+    
+    // Set up Intersection Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const cardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add delay based on card position for staggered animation
+                const index = Array.from(destinationCards).indexOf(entry.target);
+                const delay = index * 100; // 100ms between each card
+                
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }, delay);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe each card
+    destinationCards.forEach(card => {
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        cardObserver.observe(card);
+    });
+    
+    // Add hover effects
+    destinationCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            // Smooth hover effect handled by CSS
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            // Smooth hover effect handled by CSS
+        });
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initDestinationCards();
+    
+    // If you need to re-run when new content is loaded (like with AJAX):
+    // document.addEventListener('contentLoaded', initDestinationCards);
+});
+
+// If you're using modules or need to call this from another script:
+// export { initDestinationCards };
