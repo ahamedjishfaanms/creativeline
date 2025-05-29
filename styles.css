@@ -1378,6 +1378,240 @@ body.no-scroll {
     }
 }
 
+/* Happy Customers Section */
+.customers-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.customers-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.customers-section .section-title {
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.customers-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--teal);
+    border-radius: 2px;
+}
+
+.customers-section .section-subtitle {
+    color: var(--medium-blue);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.customers-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.customer-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll 30s linear infinite;
+    width: calc(250px * 10); /* Adjust based on number of items */
+}
+
+.customer-item {
+    min-width: 350px;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.customer-frame {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.customer-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.customer-item:hover .customer-frame img {
+    transform: scale(1.05);
+}
+
+.package-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--teal);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 144, 158, 0.3);
+}
+
+.customer-quote {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+}
+
+.customer-quote p {
+    color: var(--medium-blue);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.customer-name {
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Floating Bubbles Animation */
+.floating-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 144, 158, 0.05);
+    animation: float 15s infinite ease-in-out;
+    filter: blur(30px);
+    opacity: 0.7;
+}
+
+.bubble-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    width: 500px;
+    height: 500px;
+    bottom: 15%;
+    right: 5%;
+    animation-delay: 3s;
+    animation-direction: reverse;
+}
+
+.bubble-3 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 30%;
+    animation-delay: 6s;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 5)); /* Adjust based on number of items */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .customer-track {
+        animation-duration: 40s;
+    }
+    
+    .customer-item {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .customers-section {
+        padding: 80px 0;
+    }
+    
+    .customers-section .section-title {
+        font-size: 2rem;
+    }
+    
+    .customers-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    
+    .customer-track {
+        gap: 20px;
+    }
+    
+    .customer-item {
+        min-width: 280px;
+    }
+    
+    .customer-frame {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .customers-section {
+        padding: 60px 0;
+    }
+    
+    .customer-track {
+        animation-duration: 50s;
+    }
+    
+    .customer-item {
+        min-width: 260px;
+    }
+    
+    .customer-quote {
+        padding: 20px;
+    }
+}
+
 /* Updated Branches Section - 4 Cards in One Line */
 .branches-section {
     padding: 100px 0;
