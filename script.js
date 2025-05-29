@@ -204,6 +204,36 @@ function initDestinationCards() {
     });
 }
 
+// Infinite Carousel Animation
+function initCustomerCarousel() {
+    const customerTrack = document.querySelector('.customer-track');
+    
+    if (!customerTrack) return;
+    
+    // Clone the first few items and append to end for infinite effect
+    const customerItems = customerTrack.querySelectorAll('.customer-item');
+    const firstFewItems = Array.from(customerItems).slice(0, 4);
+    
+    firstFewItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        customerTrack.appendChild(clone);
+    });
+    
+    // Pause animation on hover
+    customerTrack.addEventListener('mouseenter', () => {
+        customerTrack.style.animationPlayState = 'paused';
+    });
+    
+    customerTrack.addEventListener('mouseleave', () => {
+        customerTrack.style.animationPlayState = 'running';
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initCustomerCarousel();
+});
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initDestinationCards();
@@ -211,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // If you need to re-run when new content is loaded (like with AJAX):
     // document.addEventListener('contentLoaded', initDestinationCards);
 });
+
 
 // If you're using modules or need to call this from another script:
 // export { initDestinationCards };
