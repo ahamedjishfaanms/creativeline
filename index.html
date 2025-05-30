@@ -173,6 +173,231 @@
         </div>
     </div>
 </section>
+
+<!-- Enquiry Section -->
+<section class="enquiry-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Quick Enquiry</h2>
+            <p class="section-subtitle">Get instant quotes for flights, hotels, tours & government services</p>
+        </div>
+        
+        <div class="enquiry-ticket">
+            <!-- Ticket Header -->
+            <div class="ticket-header">
+                <div class="airline-logo">
+                    <img src="MEDIA/logo.png" alt="Creative Line Travels">
+                </div>
+                <div class="ticket-type">
+                    <span>E-TICKET</span>
+                </div>
+            </div>
+            
+            <!-- Service Tabs -->
+            <div class="service-tabs">
+                <button class="tab-btn active" data-tab="flight">Flight</button>
+                <button class="tab-btn" data-tab="hotel">Hotel</button>
+                <button class="tab-btn" data-tab="tour">Tour Package</button>
+                <button class="tab-btn" data-tab="govt">Government Service</button>
+            </div>
+            
+            <!-- Flight Enquiry Form -->
+            <div class="ticket-form flight-form active">
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="flight-from">From</label>
+                        <input type="text" id="flight-from" placeholder="City or Airport" class="airport-input">
+                    </div>
+                    <div class="swap-btn">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="ticket-field">
+                        <label for="flight-to">To</label>
+                        <input type="text" id="flight-to" placeholder="City or Airport" class="airport-input">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="departure-date">Departure</label>
+                        <input type="date" id="departure-date">
+                    </div>
+                    <div class="ticket-field">
+                        <label for="return-date">Return (Optional)</label>
+                        <input type="date" id="return-date">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="passengers">Passengers</label>
+                        <select id="passengers">
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                            <option value="family">Family (2 Adults + 2 Children)</option>
+                            <option value="group">Group (5+ People)</option>
+                        </select>
+                    </div>
+                    <div class="ticket-field">
+                        <label for="flight-class">Class</label>
+                        <select id="flight-class">
+                            <option value="economy">Economy</option>
+                            <option value="premium">Premium Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First Class</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hotel Enquiry Form -->
+            <div class="ticket-form hotel-form">
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="hotel-destination">Destination</label>
+                        <input type="text" id="hotel-destination" placeholder="City or Hotel Name">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="check-in">Check-in</label>
+                        <input type="date" id="check-in">
+                    </div>
+                    <div class="ticket-field">
+                        <label for="check-out">Check-out</label>
+                        <input type="date" id="check-out">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="rooms">Rooms</label>
+                        <select id="rooms">
+                            <option value="1">1 Room</option>
+                            <option value="2">2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4 Rooms</option>
+                            <option value="5+">5+ Rooms</option>
+                        </select>
+                    </div>
+                    <div class="ticket-field">
+                        <label for="hotel-type">Hotel Type</label>
+                        <select id="hotel-type">
+                            <option value="any">Any</option>
+                            <option value="budget">Budget</option>
+                            <option value="3star">3 Star</option>
+                            <option value="4star">4 Star</option>
+                            <option value="5star">5 Star Luxury</option>
+                            <option value="resort">Resort</option>
+                            <option value="apartment">Apartment</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tour Enquiry Form -->
+            <div class="ticket-form tour-form">
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="tour-destination">Destination</label>
+                        <input type="text" id="tour-destination" placeholder="Country or City">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="tour-type">Tour Type</label>
+                        <select id="tour-type">
+                            <option value="any">Any</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="family">Family</option>
+                            <option value="honeymoon">Honeymoon</option>
+                            <option value="religious">Religious</option>
+                        </select>
+                    </div>
+                    <div class="ticket-field">
+                        <label for="tour-dates">Travel Dates</label>
+                        <input type="text" id="tour-dates" placeholder="Flexible or Specific Dates">
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="tour-pax">Number of People</label>
+                        <input type="number" id="tour-pax" placeholder="e.g. 2" min="1">
+                    </div>
+                    <div class="ticket-field">
+                        <label for="tour-budget">Budget Range</label>
+                        <select id="tour-budget">
+                            <option value="any">Any</option>
+                            <option value="economy">Economy</option>
+                            <option value="midrange">Mid-Range</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="custom">Custom Budget</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Government Service Enquiry Form -->
+            <div class="ticket-form govt-form">
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="service-type">Service Type</label>
+                        <select id="service-type">
+                            <option value="visa">Visa Services</option>
+                            <option value="family-visa">Family Visa</option>
+                            <option value="document">Document Attestation</option>
+                            <option value="business">Business Setup</option>
+                            <option value="labor">Ministry of Labour</option>
+                            <option value="traffic">Traffic Services</option>
+                            <option value="other">Other Government Service</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="service-details">Service Details</label>
+                        <textarea id="service-details" placeholder="Please describe your requirements"></textarea>
+                    </div>
+                </div>
+                
+                <div class="ticket-row">
+                    <div class="ticket-field">
+                        <label for="urgency">Urgency</label>
+                        <select id="urgency">
+                            <option value="standard">Standard Processing</option>
+                            <option value="express">Express Service</option>
+                            <option value="urgent">Urgent (24-48 hours)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ticket Footer -->
+            <div class="ticket-footer">
+                <div class="ticket-barcode">
+                    <div class="barcode"></div>
+                    <span>CREATIVE LINE TRAVELS</span>
+                </div>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+</section>
+
 <!-- Add this after the About Us section in your index.html -->
 <section class="destinations-section">
     <div class="container">
@@ -568,7 +793,7 @@
                     </div>
                     <div class="customer-quote">
                         <p>"The cultural tour of Georgia was beyond amazing! The wine tasting was a highlight."</p>
-                        <div class="customer-name">- Sarah K.</div>
+                        <div class="customer-name">- Prathap & Sarika</div>
                     </div>
                 </div>
                 
@@ -580,7 +805,7 @@
                     </div>
                     <div class="customer-quote">
                         <p>"Armenia's ancient monasteries took our breath away. Highly recommended!"</p>
-                        <div class="customer-name">- Michael T.</div>
+                        <div class="customer-name">- Anoop & Jincy</div>
                     </div>
                 </div>
                 
@@ -591,8 +816,8 @@
                         <div class="package-badge">Georgia</div>
                     </div>
                     <div class="customer-quote">
-                        <p>"The Nile cruise was magical. Our guide made the pyramids come alive!"</p>
-                        <div class="customer-name">- Aisha M.</div>
+                        <p>"Georgia was a dream come true – snow-capped mountains, cozy old towns, and warm hospitality. Thanks to Creative Line Travels, every moment was perfectly planned and stress-free!"</p>
+                        <div class="customer-name">- Rafsal.</div>
                     </div>
                 </div>
                 
@@ -603,8 +828,8 @@
                         <div class="package-badge">Georgia</div>
                     </div>
                     <div class="customer-quote">
-                        <p>"Dubai's luxury experience was worth every penny. The desert safari was unforgettable."</p>
-                        <div class="customer-name">- James L.</div>
+                        <p>"Every detail was thoughtfully curated – delicious local cuisine, scenic routes, and hidden gems. Creative Line’s Georgia package truly gave us more than we expected."</p>
+                        <div class="customer-name">- Midhun & Suramya.</div>
                     </div>
                 </div>
                 <!-- Customer Item 5 -->
@@ -614,8 +839,8 @@
                         <div class="package-badge">Georgia</div>
                     </div>
                     <div class="customer-quote">
-                        <p>"Dubai's luxury experience was worth every penny. The desert safari was unforgettable."</p>
-                        <div class="customer-name">- James L.</div>
+                        <p>"The beauty of Georgia is unmatched, and Creative Line Travels ensured we saw it all in style and comfort. Highly recommended for a hassle-free travel experience!"</p>
+                        <div class="customer-name">- Khaleel & Family.</div>
                     </div>
                 </div>
                 <!-- Customer Item 6 -->
@@ -625,8 +850,8 @@
                         <div class="package-badge">Georgia</div>
                     </div>
                     <div class="customer-quote">
-                        <p>"Dubai's luxury experience was worth every penny. The desert safari was unforgettable."</p>
-                        <div class="customer-name">- James L.</div>
+                        <p>"From the ancient streets of Tbilisi to the stunning views of Kazbegi, Georgia amazed us. Creative Line’s package was affordable, well-organized, and filled with unforgettable experiences."</p>
+                        <div class="customer-name">- Lincon and Family.</div>
                     </div>
                 </div>
                 
@@ -637,7 +862,7 @@
                         <div class="package-badge">Georgia Tour</div>
                     </div>
                     <div class="customer-quote">
-                        <p>"The cultural tour of Georgia was beyond amazing! The wine tasting was a highlight."</p>
+                        <p>"We felt completely taken care of – comfortable stays, expert guides, and smooth transfers. Georgia’s charm paired with Creative Line’s service made our trip magical."</p>
                         <div class="customer-name">- Sarah K.</div>
                     </div>
                 </div>
