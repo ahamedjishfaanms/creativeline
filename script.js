@@ -159,6 +159,120 @@ if (aboutSection) {
     observer.observe(aboutSection);
 }
 
+// Enquiry Form Functionality
+function initEnquiryForm() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const forms = document.querySelectorAll('.ticket-form');
+    const enquireBtn = document.querySelector('.enquire-btn');
+    
+    // Tab switching
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Update active tab
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show corresponding form
+            forms.forEach(form => {
+                form.classList.remove('active');
+                if (form.classList.contains(`${tabId}-form`)) {
+                    form.classList.add('active');
+                }
+            });
+        });
+    });
+    
+    // Swap flight from/to
+    const swapBtn = document.querySelector('.swap-btn');
+    swapBtn.addEventListener('click', function() {
+        const fromInput = document.getElementById('flight-from');
+        const toInput = document.getElementById('flight-to');
+        const temp = fromInput.value;
+        fromInput.value = toInput.value;
+        toInput.value = temp;
+    });
+    
+    // Enquire button functionality
+    enquireBtn.addEventListener('click', function() {
+        const activeTab = document.querySelector('.tab-btn.active').getAttribute('data-tab');
+        let message = "Hi Creative Line Travels, I'm interested in:\n\n";
+        
+        switch(activeTab) {
+            case 'flight':
+                const from = document.getElementById('flight-from').value;
+                const to = document.getElementById('flight-to').value;
+                const departure = document.getElementById('departure-date').value;
+                const returnDate = document.getElementById('return-date').value;
+                const passengers = document.getElementById('passengers').value;
+                const flightClass = document.getElementById('flight-class').value;
+                
+                message += `*Flight Enquiry*\n`;
+                message += `From: ${from}\n`;
+                message += `To: ${to}\n`;
+                message += `Departure: ${departure}\n`;
+                if (returnDate) message += `Return: ${returnDate}\n`;
+                message += `Passengers: ${passengers}\n`;
+                message += `Class: ${flightClass}`;
+                break;
+                
+            case 'hotel':
+                const destination = document.getElementById('hotel-destination').value;
+                const checkIn = document.getElementById('check-in').value;
+                const checkOut = document.getElementById('check-out').value;
+                const rooms = document.getElementById('rooms').value;
+                const hotelType = document.getElementById('hotel-type').value;
+                
+                message += `*Hotel Enquiry*\n`;
+                message += `Destination: ${destination}\n`;
+                message += `Check-in: ${checkIn}\n`;
+                message += `Check-out: ${checkOut}\n`;
+                message += `Rooms: ${rooms}\n`;
+                message += `Hotel Type: ${hotelType}`;
+                break;
+                
+            case 'tour':
+                const tourDestination = document.getElementById('tour-destination').value;
+                const tourType = document.getElementById('tour-type').value;
+                const tourDates = document.getElementById('tour-dates').value;
+                const tourPax = document.getElementById('tour-pax').value;
+                const tourBudget = document.getElementById('tour-budget').value;
+                
+                message += `*Tour Package Enquiry*\n`;
+                message += `Destination: ${tourDestination}\n`;
+                message += `Tour Type: ${tourType}\n`;
+                message += `Travel Dates: ${tourDates}\n`;
+                message += `Number of People: ${tourPax}\n`;
+                message += `Budget: ${tourBudget}`;
+                break;
+                
+            case 'govt':
+                const serviceType = document.getElementById('service-type').value;
+                const serviceDetails = document.getElementById('service-details').value;
+                const urgency = document.getElementById('urgency').value;
+                
+                message += `*Government Service Enquiry*\n`;
+                message += `Service Type: ${serviceType}\n`;
+                message += `Details: ${serviceDetails}\n`;
+                message += `Urgency: ${urgency}`;
+                break;
+        }
+        
+        // Encode message for WhatsApp URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/971557504798?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initEnquiryForm();
+});
+
 // Improved Destination Cards Animation with Intersection Observer
 function initDestinationCards() {
     const destinationCards = document.querySelectorAll('.destination-card');
