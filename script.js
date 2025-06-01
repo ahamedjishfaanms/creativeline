@@ -164,6 +164,24 @@ function initEnquiryForm() {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const forms = document.querySelectorAll('.ticket-form');
     const enquireBtn = document.querySelector('.enquire-btn');
+
+    // Update the swap button positioning on mobile
+function handleSwapButtonPosition() {
+    const swapBtn = document.querySelector('.swap-btn');
+    if (window.innerWidth < 768) {
+        swapBtn.style.alignItems = 'center';
+        swapBtn.style.justifyContent = 'center';
+        swapBtn.style.padding = '10px 0';
+    } else {
+        swapBtn.style.alignItems = 'flex-end';
+        swapBtn.style.justifyContent = 'flex-start';
+        swapBtn.style.padding = '0 0 8px 0';
+    }
+}
+
+// Call it initially and on resize
+handleSwapButtonPosition();
+window.addEventListener('resize', handleSwapButtonPosition);
     
     // Tab switching
     tabButtons.forEach(button => {
