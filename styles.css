@@ -1123,20 +1123,46 @@ body.no-scroll {
     }
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Enquiry Section */
+@media (max-width: 992px) {
+    .enquiry-ticket {
+        max-width: 90%;
+    }
+    
+    .ticket-row {
+        flex-wrap: wrap;
+    }
+    
+    .ticket-field {
+        flex: 1 0 calc(50% - 10px);
+    }
+}
+
 @media (max-width: 768px) {
     .enquiry-section {
         padding: 80px 0;
     }
     
-    .ticket-row {
-        flex-direction: column;
-        gap: 15px;
+    .service-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1 0 50%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .ticket-form {
+        padding: 20px;
+    }
+    
+    .ticket-field {
+        flex: 1 0 100%;
     }
     
     .swap-btn {
-        align-items: center;
-        justify-content: center;
+        align-self: center;
         padding: 10px 0;
     }
     
@@ -1152,19 +1178,96 @@ body.no-scroll {
     }
 }
 
-@media (max-width: 480px) {
-    .service-tabs {
-        flex-wrap: wrap;
+@media (max-width: 576px) {
+    .enquiry-section {
+        padding: 60px 0;
+    }
+    
+    .enquiry-section .section-title {
+        font-size: 2rem;
+    }
+    
+    .enquiry-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
     
     .tab-btn {
-        flex: 1 0 50%;
-        padding: 12px;
-        font-size: 0.9rem;
+        flex: 1 0 100%;
+        padding: 10px;
+    }
+    
+    .ticket-header {
+        padding: 15px 20px;
+    }
+    
+    .airline-logo img {
+        height: 30px;
+    }
+    
+    .ticket-type {
+        padding: 3px 10px;
+        font-size: 0.8rem;
     }
     
     .ticket-form {
-        padding: 20px;
+        padding: 15px;
+    }
+    
+    .ticket-field input,
+    .ticket-field select,
+    .ticket-field textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .enquire-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .barcode {
+        width: 100px;
+        height: 30px;
+    }
+}
+
+/* Special handling for very small screens */
+@media (max-width: 400px) {
+    .enquiry-ticket {
+        max-width: 95%;
+    }
+    
+    .ticket-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .airline-logo {
+        margin-bottom: 10px;
+    }
+    
+    .ticket-form {
+        padding: 10px;
+    }
+    
+    .ticket-row {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .ticket-field label {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .ticket-field textarea {
+        min-height: 80px;
+    }
+    
+    .floating-clouds {
+        display: none;
     }
 }
 /* Popular Destinations Section - Updated UX */
