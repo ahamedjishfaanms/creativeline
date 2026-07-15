@@ -377,3 +377,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // If you're using modules or need to call this from another script:
 // export { initDestinationCards };
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Gather values from the form inputs
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const subject = document.getElementById('subject').value;
+        const messageText = document.getElementById('message').value;
+
+        // Construct the full text with clear formatting
+        const fullText = `*New Contact Inquiry*\n\n` +
+                         `*Name:* ${name}\n` +
+                         `*Email:* ${email}\n` +
+                         `*Phone:* ${phone}\n` +
+                         `*Subject:* ${subject}\n` +
+                         `*Message:* ${messageText}`;
+
+        // Encode the message and trigger WhatsApp redirection
+        const encodedMessage = encodeURIComponent(fullText);
+        const whatsappUrl = `https://wa.me/971557504798?text=${encodedMessage}`;
+
+        // Open WhatsApp in a new tab[cite: 2]
+        window.open(whatsappUrl, '_blank');
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing initializations...
+    initContactForm(); 
+});
